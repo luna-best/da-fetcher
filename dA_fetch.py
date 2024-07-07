@@ -176,6 +176,7 @@ class DAImage:
 										section_dims.y,
 										section_dims.x + section_dims.width - 1,
 										section_dims.y + section_dims.height - 1))
+					self.progress.update(section_dims.width * section_dims.height)
 					self.image.paste(section, (section_dims.x, section_dims.y))
 				else:
 					self.recover_section_or_skip(section_dims)
