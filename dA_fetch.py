@@ -87,6 +87,10 @@ class DAImage:
 			print(f"Unsupported file type: {extended_data['originalFile']['type']}")
 			exit(1)
 
+		if "hasWatermark" in extended_data and extended_data["hasWatermark"]:
+			print("Watermark detected, all slices will be tainted. Disabling recovery.")
+			self.fast = True
+
 		self.target_width = extended_data["originalFile"]["width"]
 		self.target_height = extended_data["originalFile"]["height"]
 		self.base_uri = basic_data["media"]["baseUri"]
