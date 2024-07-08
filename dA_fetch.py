@@ -83,7 +83,7 @@ class DAImage:
 			print("This image can already be downloaded directly from dA. Exiting")
 			exit(1)
 
-		if extended_data["originalFile"]["type"] not in ["png", "jpg"]:
+		if extended_data["originalFile"]["type"] not in ["png", "jpeg"]:
 			print(f"Unsupported file type: {extended_data['originalFile']['type']}")
 			exit(1)
 
